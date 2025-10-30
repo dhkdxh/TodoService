@@ -66,7 +66,7 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Title</span>
                                 <input type="text" name="title" class="form-control"
-                                       value=<c:out value="${dto.title}"></c:out> >
+                                       value="<c:out value="${dto.title}"></c:out>" >
                             </div>
 
                             <div class="input-group mb-3">
@@ -100,7 +100,6 @@
                         </form>
 
                         <script>
-
                             const serverValidResult = {}
 
                             <c:forEach items="${errors}" var="error">
@@ -109,7 +108,14 @@
 
                             </c:forEach>
 
-                            console.log(serverValidResult)
+                            let messages = '';
+                            for (let field in serverValidResult) {
+                                messages += `${field}: ${serverValidResult[field]}\n`;
+                            }
+
+                            if (messages) {
+                                alert(messages);
+                            }
                         </script>
 
                     </div>

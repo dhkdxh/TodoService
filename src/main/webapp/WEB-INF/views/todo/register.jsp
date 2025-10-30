@@ -62,7 +62,7 @@
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text">DueDate</span>
-                                <input type="date" name="dueDate" class="form-control" placeholder="Writer">
+                                <input type="date" name="dueDate" class="form-control" placeholder="DueDate">
                             </div>
 
                             <div class="input-group mb-3">
@@ -88,7 +88,14 @@
 
                             </c:forEach>
 
-                            console.log(serverValidResult)
+                            let messages = '';
+                            for (let field in serverValidResult) {
+                                messages += `${field}: ${serverValidResult[field]}\n`;
+                            }
+
+                            if (messages) {
+                                alert(messages);
+                            }
 
                         </script>
 
