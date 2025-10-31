@@ -10,15 +10,13 @@ public interface TodoMapper {
 
     void insert(TodoVO todoVO);
 
-    List<TodoVO> selectAll();
+    List<TodoVO> selectAll(PageRequestDTO pageRequestDTO);
 
     TodoVO selectOne(int tno);
 
     void delete(int tno);
 
     void update(TodoVO todoVO);
-
-    List<TodoVO> selectList(PageRequestDTO pageRequestDTO);
 
     int getCount(PageRequestDTO pageRequestDTO);
 }

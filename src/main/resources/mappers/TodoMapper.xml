@@ -13,7 +13,7 @@
     </insert>
 
     <select id="selectAll" resultType="com.ssg.todoservice.domain.TodoVO">
-        select * from todo order by tno desc
+        select * from todo order by tno desc limit #{skip}, #{size}
     </select>
 
     <select id="selectOne" resultType="com.ssg.todoservice.domain.TodoVO">
@@ -34,6 +34,6 @@
     </select>
 
     <select id="getCount" resultType="int">
-        select count(*) from todo
+        select count(tno) from todo
     </select>
 </mapper>
